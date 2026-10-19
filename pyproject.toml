@@ -1,0 +1,25 @@
+[project]
+name = "rag"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "bm25>=0.3.14",
+    "bm25s[full]>=0.3.14",
+    "docx>=0.2.4",
+    "exceptions",
+    "fire>=0.7.1",
+    "panda>=0.3.1",
+    "pandas>=2.3.3",
+    "pydantic>=2.14.1",
+    "pypdf>=6.21.1",
+    "tqdm>=4.70.1",
+]
+
+[dependency-groups]
+dev = [
+    "flake8>=7.4.1",
+    "mypy>=2.4.0",
+]
+
+[tool.mypy]
+exclude = ["data/", ".venv/", "vllm-0.10.1"]
