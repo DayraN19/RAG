@@ -24,7 +24,7 @@ def extract_text_from_docx(filepath):
 
 # 2. Parcourir le dossier et centraliser les documents
 documents = []
-folder_path = "chemin/vers/votre_dossier"
+folder_path = "vllm-0.10.1"
 
 for filename in os.listdir(folder_path):
     filepath = os.path.join(folder_path, filename)
@@ -75,12 +75,12 @@ retriever = bm25s.BM25()
 retriever.index(corpus_tokens)
 
 # 4. Exemple de recherche
-query = "votre mot clé"
+query = "comment installer pip"
 query_tokens = bm25s.tokenize([query])
-results, scores = retriever.search(query_tokens, k=3)
+results, scores = retriever.retrieve(query_tokens, k=1)
 
 # Affichage des résultats avec leur fichier d'origine
 for i in range(results.shape[1]):
     doc_index = results[0, i]
     print(f"Trouvé dans : {documents[doc_index]['source']} (Score: {scores[0, i]:.2f})")
-    print(f"Extrait : {corpus_texts[doc_index][:200]}...\n")
+    print(f"Extrait : {corpus_texts[doc_index][:2000]}...\n")
