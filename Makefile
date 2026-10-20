@@ -1,8 +1,17 @@
+SET ?= docs
+K ?= 10
+CHUNK ?= 2000
+Q ?= How to load a LoRA adapter?
+DATASET = data/datasets/UnansweredQuestions/dataset_$(SET)_public.json
+TRUTH = data/datasets/AnsweredQuestions/dataset_$(SET)_public.json
+RESULTS = data/output/search_results/UnansweredQuestions
+ANSWERS = data/output/search_results_and_answer/UnansweredQuestions
+
 install:
 	uv sync
 
 run:
-	uv run python src/indexation_bm.py
+	uv run python -m src index
 
 debug:
 	uv run python -m pdb -m src
@@ -19,4 +28,22 @@ lint-strict:
 	uv run flake8 .
 	uv run mypy . --strict
 
-.PHONY: install run debug clean lint lint-strict
+index:
+	uv run python -m src index --max_chunk_size $(CHUNK)
+
+search:
+	uv run python -m src search "$(Q)" --k $(K)
+
+search_dataset:
+	uv run python -m src search_dataset --dataset_path $(DATASET) --k $(K) --save_directory $(RESULTS)
+
+evaluate:
+	uv run python -m src evaluate --student_search_results_path $(RESULTS)/dataset_$(SET)_public.json --dataset_path $(TRUTH)
+
+answer:
+	uv run python -m src answer "$(Q)" --k $(K)
+
+answer_dataset:
+	uv run python -m src answer_dataset --student_search_results_path $(RESULTS)/dataset_$(SET)_public.json --save_directory $(ANSWERS)
+
+.PHONY: install run debug clean lint lint-strict index search search_dataset evaluate answer answer_dataset

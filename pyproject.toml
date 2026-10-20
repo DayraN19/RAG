@@ -3,14 +3,12 @@ name = "rag"
 version = "0.1.0"
 requires-python = ">=3.10"
 dependencies = [
-    "bm25>=0.3.14",
     "bm25s[full]>=0.3.14",
     "fire>=0.7.1",
-    "pandas>=2.3.3",
     "pydantic>=2.14.1",
-    "pypdf>=6.21.1",
-    "python-docx>=1.2.0",
+    "torch>=2.14.1",
     "tqdm>=4.70.1",
+    "transformers>=5.20.2",
 ]
 
 [dependency-groups]
@@ -21,3 +19,12 @@ dev = [
 
 [tool.mypy]
 exclude = ["data/", ".venv/", "vllm-0.10.1"]
+
+# CPU-only torch: the campus machines have no GPU, and CUDA wheels weigh gigabytes.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
