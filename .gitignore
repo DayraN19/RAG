@@ -4,3 +4,5 @@ __pycache__/
 .mypy_cache/
 data/
 vllm-0.10.1/
+moulinette/
+*.zip

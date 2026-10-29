@@ -6,9 +6,19 @@ DATASET = data/datasets/UnansweredQuestions/dataset_$(SET)_public.json
 TRUTH = data/datasets/AnsweredQuestions/dataset_$(SET)_public.json
 RESULTS = data/output/search_results/UnansweredQuestions
 ANSWERS = data/output/search_results_and_answer/UnansweredQuestions
+VLLM_ZIP ?= vllm-0.10.1.zip
+DATASETS_ZIP ?= datasets_public.zip
 
 install:
 	uv sync
+
+# Extract the subject attachments into data/raw/ and data/datasets/.
+data:
+	mkdir -p data/raw data/datasets
+	unzip -qo "$(VLLM_ZIP)" -d data/raw
+	rm -rf data/.tmp && unzip -qo "$(DATASETS_ZIP)" -d data/.tmp
+	cp -r data/.tmp/datasets_public/public/. data/datasets/
+	rm -rf data/.tmp
 
 run:
 	uv run python -m src index
@@ -46,4 +56,4 @@ answer:
 answer_dataset:
 	uv run python -m src answer_dataset --student_search_results_path $(RESULTS)/dataset_$(SET)_public.json --save_directory $(ANSWERS)
 
-.PHONY: install run debug clean lint lint-strict index search search_dataset evaluate answer answer_dataset
+.PHONY: install data run debug clean lint lint-strict index search search_dataset evaluate answer answer_dataset
