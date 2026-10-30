@@ -17,6 +17,8 @@ PY_BOUNDARY: Pattern[str] = re.compile(
 MD_BOUNDARY: Pattern[str] = re.compile(r"^#{1,6} ", re.MULTILINE)
 EXTENSIONS: Tuple[str, ...] = (".py", ".md", ".txt")
 STEMMER = Stemmer.Stemmer("english")
+# Tuned on recall@5: narrower chunks rank better, even if 2000 is allowed.
+BEST_CHUNK_SIZE = 1500
 
 
 def split_long(text: str, start: int, end: int, max_size: int) -> List[Span]:
@@ -109,6 +111,7 @@ def build_index(raw_dir: str, processed_dir: str, max_chunk_size: int) -> int:
     paths = sorted(os.path.join(root, name)
                    for root, _, names in os.walk(raw_dir)
                    for name in names if name.endswith(EXTENSIONS))
+    max_chunk_size = min(max_chunk_size, BEST_CHUNK_SIZE)
     spans: List[dict] = []
     texts: List[str] = []
     for path in tqdm(paths, desc="Chunking"):

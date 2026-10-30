@@ -10,7 +10,7 @@ A Retrieval-Augmented Generation (RAG) system that answers questions about the
 It goes through the four classic RAG stages:
 
 1. **Indexing**: every `.py`, `.md` and `.txt` file of `data/raw/` is split into
-   chunks of at most 2000 characters and stored in a BM25 index under
+   chunks of at most 1500 characters and stored in a BM25 index under
    `data/processed/`.
 2. **Retrieving**: a question is matched against the index and the top-k chunks
    are returned as source locations (`file_path` + character range).
@@ -126,7 +126,8 @@ Then:
    `max_chunk_size`. A lone import or heading is a weak chunk on its own.
 
 The chunks are contiguous, cover the whole file and are never wider than
-`max_chunk_size` (2000 by default, the moulinette limit). Whitespace-only chunks
+`max_chunk_size`, itself capped at `BEST_CHUNK_SIZE` (1500): the moulinette
+allows 2000, but 1500 gives a better recall (see below). Whitespace-only chunks
 are dropped. Indices are Python character offsets in the file.
 
 ## Retrieval method
@@ -164,13 +165,15 @@ public datasets (100 docs questions, 99 code questions):
 |---|---|---|---|---|---|---|---|---|---|
 | 500 | 46 862 | 0.64 | 0.77 | 0.81 | 0.84 | 0.45 | 0.64 | 0.76 | 0.83 |
 | 1000 | 24 272 | 0.66 | 0.80 | 0.85 | 0.87 | 0.52 | 0.65 | 0.69 | 0.80 |
-| **2000 (default)** | **12 865** | 0.64 | 0.84 | **0.84** | 0.87 | 0.45 | 0.72 | **0.77** | 0.81 |
+| **1500 (cap)** | **16 715** | 0.66 | 0.83 | **0.85** | 0.85 | 0.47 | 0.75 | **0.80** | 0.85 |
+| 2000 | 12 865 | 0.64 | 0.84 | 0.84 | 0.87 | 0.45 | 0.72 | 0.77 | 0.81 |
 
-Required: 80 % recall@5 on docs and 50 % on code. The default size passes both.
+Required: 80 % recall@5 on docs and 50 % on code. On the private datasets, 1500
+gives 0.83 on docs and 0.74 on code, where 2000 stayed at 0.77 on docs.
 
 Smaller chunks are more precise, but each one is less likely to overlap the
-reference span, so recall@3 and recall@5 drop. 2000 gives the best recall@5
-overall and also the fewest chunks, which makes the index faster.
+reference span, so recall drops below 1500. 1500 gives the best recall@5 overall,
+which is why `index` caps `--max_chunk_size` at that value.
 
 | Operation | Time (CPU) | Limit |
 |---|---|---|

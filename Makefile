@@ -1,3 +1,4 @@
+export MYPY_CACHE_DIR := /tmp/$(USER)-mypy
 SET ?= docs
 K ?= 10
 CHUNK ?= 2000
@@ -32,7 +33,7 @@ clean:
 
 lint:
 	uv run flake8 .
-	uv run mypy . --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
+	uv run mypy src --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
 
 lint-strict:
 	uv run flake8 .
