@@ -1,0 +1,57 @@
+{
+  "question_id": "3041b7c6-976e-45da-a87f-fd4c56d4c32f",
+  "question": "Question 2?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 12671,
+      "last_character_index": 13865
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 2670,
+      "last_character_index": 3243
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/lora/test_llama_tp.py",
+      "first_character_index": 1407,
+      "last_character_index": 2494
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 19429,
+      "last_character_index": 20158
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 1066,
+      "last_character_index": 2072
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/system_messages/sonnet3.5_nov2024.txt",
+      "first_character_index": 1836,
+      "last_character_index": 3005
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 4332,
+      "last_character_index": 4921
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 38420,
+      "last_character_index": 39089
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/README.md",
+      "first_character_index": 10576,
+      "last_character_index": 11235
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 9000,
+      "last_character_index": 9902
+    }
+  ],
+  "answer": "The answer is 2."
+}

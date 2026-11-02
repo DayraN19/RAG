@@ -1,0 +1,57 @@
+{
+  "question_id": "eee04ff1-45fd-488c-8b0c-879ed23245bc",
+  "question": "What Python packages need to be installed to use vLLM with LangChain?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/integrations/langchain.md",
+      "first_character_index": 0,
+      "last_character_index": 788
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 4767,
+      "last_character_index": 5741
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/retrieval_augmented_generation_with_langchain.py",
+      "first_character_index": 0,
+      "last_character_index": 1722
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 103500,
+      "last_character_index": 105046
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 265,
+      "last_character_index": 990
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/retrieval_augmented_generation_with_langchain.py",
+      "first_character_index": 3567,
+      "last_character_index": 3890
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/frameworks/retrieval_augmented_generation.md",
+      "first_character_index": 1446,
+      "last_character_index": 1721
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/README.md",
+      "first_character_index": 2548,
+      "last_character_index": 2786
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/retrieval_augmented_generation_with_langchain.py",
+      "first_character_index": 6198,
+      "last_character_index": 7411
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 5738,
+      "last_character_index": 7738
+    }
+  ],
+  "answer": "The Python packages needed to use vLLM with LangChain are vllm, langchain, langchain_milvus, and langchain_openai."
+}
