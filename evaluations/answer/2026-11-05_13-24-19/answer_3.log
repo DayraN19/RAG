@@ -1,0 +1,57 @@
+{
+  "question_id": "query",
+  "question": "Which vLLM features are not supported on TPU hardware?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 0,
+      "last_character_index": 1452
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/tpu.md",
+      "first_character_index": 5744,
+      "last_character_index": 7157
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/compatibility_matrix.md",
+      "first_character_index": 2565,
+      "last_character_index": 4018
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 1452,
+      "last_character_index": 2698
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quantized_kvcache.md",
+      "first_character_index": 833,
+      "last_character_index": 1775
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/aws_neuron.md",
+      "first_character_index": 2246,
+      "last_character_index": 3653
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/compatibility_matrix.md",
+      "first_character_index": 0,
+      "last_character_index": 364
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/v1_guide.md",
+      "first_character_index": 3311,
+      "last_character_index": 4172
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 8534,
+      "last_character_index": 9358
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/README.md",
+      "first_character_index": 0,
+      "last_character_index": 1157
+    }
+  ],
+  "answer": "The features not supported on TPU hardware are [SD](spec_decode.md) and [CUDA graph]."
+}

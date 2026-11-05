@@ -32,11 +32,13 @@ clean:
 	rm -rf .mypy_cache
 
 lint:
-	uv run flake8 .
+	@trap 'echo "Lint interrupted."; exit 0' INT; \
+	uv run flake8 . && \
 	uv run mypy src --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
 
 lint-strict:
-	uv run flake8 .
+	@trap 'echo "Lint interrupted."; exit 0' INT; \
+	uv run flake8 . && \
 	uv run mypy . --strict
 
 index:

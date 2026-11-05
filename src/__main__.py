@@ -1,19 +1,36 @@
 """Command-line interface for the RAG project."""
 
 import os
-from typing import Type, TypeVar
+import sys
+from typing import NoReturn, Type, TypeVar
 
-import fire
-from pydantic import BaseModel
-from tqdm import tqdm
 
-from src.evaluation import recall_at_k
-from src.generator import Generator
-from src.indexer import build_index
-from src.models import (AnsweredQuestion, MinimalAnswer, MinimalSearchResults,
-                        RagDataset, StudentSearchResults,
-                        StudentSearchResultsAndAnswer)
-from src.retriever import Retriever
+def interrupted() -> NoReturn:
+    """Stop on Ctrl+C without a traceback.
+
+    Exit code 0 so make does not add its own error line: make is interrupted
+    by the same Ctrl+C anyway.
+    """
+    print("\nInterrupted", file=sys.stderr)
+    sys.exit(0)
+
+
+# Imports inside the try: torch and transformers take seconds to load.
+try:
+    import fire
+    from pydantic import BaseModel
+    from tqdm import tqdm
+
+    from src.evaluation import recall_at_k
+    from src.generator import Generator
+    from src.indexer import build_index
+    from src.models import (AnsweredQuestion, MinimalAnswer,
+                            MinimalSearchResults, RagDataset,
+                            StudentSearchResults,
+                            StudentSearchResultsAndAnswer)
+    from src.retriever import Retriever
+except KeyboardInterrupt:
+    interrupted()
 
 Model = TypeVar("Model", bound=BaseModel)
 
@@ -223,4 +240,7 @@ class Cli:
 
 
 if __name__ == "__main__":
-    fire.Fire(Cli)
+    try:
+        fire.Fire(Cli)
+    except KeyboardInterrupt:
+        interrupted()

@@ -1,0 +1,57 @@
+{
+  "question_id": "query",
+  "question": "What causes the NCCL error \"unhandled system error\" during ncclCommInitRank in vLLM distributed serving?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/troubleshooting.md",
+      "first_character_index": 13685,
+      "last_character_index": 15156
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl_wrapper.py",
+      "first_character_index": 3715,
+      "last_character_index": 5181
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl.py",
+      "first_character_index": 3600,
+      "last_character_index": 5059
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl_wrapper.py",
+      "first_character_index": 11076,
+      "last_character_index": 12549
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/p2p/p2p_nccl_engine.py",
+      "first_character_index": 12112,
+      "last_character_index": 13594
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/p2p/p2p_nccl_engine.py",
+      "first_character_index": 6173,
+      "last_character_index": 7667
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/troubleshooting.md",
+      "first_character_index": 7937,
+      "last_character_index": 9280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl.py",
+      "first_character_index": 5059,
+      "last_character_index": 6508
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/parallelism_scaling.md",
+      "first_character_index": 10247,
+      "last_character_index": 11171
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/worker.py",
+      "first_character_index": 7607,
+      "last_character_index": 9073
+    }
+  ],
+  "answer": "The NCCL error \"unhandled system error\" during `ncclCommInitRank` in vLLM is caused by a missing `IPC_LOCK` Linux capability or an unmounted `/dev/shm` directory."
+}

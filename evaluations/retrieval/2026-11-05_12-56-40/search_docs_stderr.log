@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sgoinfre/bgranier/RAG/src/__main__.py", line 11, in <module>
+    from src.evaluation import recall_at_k
+  File "/sgoinfre/bgranier/RAG/src/evaluation.py", line 5, in <module>
+    from models import AnsweredQuestion, MinimalSource, StudentSearchResults
+ModuleNotFoundError: No module named 'models'
