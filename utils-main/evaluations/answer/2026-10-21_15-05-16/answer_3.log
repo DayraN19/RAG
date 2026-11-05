@@ -1,0 +1,57 @@
+{
+  "question_id": "afc4f630-cd01-419f-ae9a-c126ab0f6b8b",
+  "question": "What Python packages need to be installed to use vLLM with LangChain?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/integrations/langchain.md",
+      "first_character_index": 0,
+      "last_character_index": 788
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 4767,
+      "last_character_index": 5741
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/retrieval_augmented_generation_with_langchain.py",
+      "first_character_index": 0,
+      "last_character_index": 1039
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 5738,
+      "last_character_index": 6745
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu/s390x.inc.md",
+      "first_character_index": 834,
+      "last_character_index": 2452
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/google_tpu.md",
+      "first_character_index": 6379,
+      "last_character_index": 7188
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/xpu.inc.md",
+      "first_character_index": 679,
+      "last_character_index": 1433
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 1887,
+      "last_character_index": 3001
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/retrieval_augmented_generation_with_langchain.py",
+      "first_character_index": 6198,
+      "last_character_index": 7411
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 3001,
+      "last_character_index": 4133
+    }
+  ],
+  "answer": "To use vLLM with LangChain, you need to install the following packages: vllm, langchain, langchain_milvus, langchain_openai, beautifulsoup4, and langchain_text_splitters."
+}

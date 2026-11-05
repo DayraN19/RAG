@@ -1,0 +1,20 @@
+[project]
+name = "rag-against-the-machine"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.10"
+dependencies = [
+    "fire>=0.7.1",
+    "pydantic>=2.13.4",
+    "rank-bm25>=0.2.2",
+    "torch>=2.14.0",
+    "tqdm>=4.70.0",
+    "transformers>=5.17.0",
+]
+
+[dependency-groups]
+dev = [
+    "flake8>=7.3.0",
+    "mypy>=2.3.0",
+    "types-tqdm>=4.70.0.20260906",
+]

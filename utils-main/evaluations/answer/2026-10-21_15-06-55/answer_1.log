@@ -1,0 +1,57 @@
+{
+  "question_id": "4a4a9082-74b0-4545-978a-04aab7b70954",
+  "question": "Question 1?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 12671,
+      "last_character_index": 13865
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 1066,
+      "last_character_index": 2072
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/system_messages/sonnet3.5_nov2024.txt",
+      "first_character_index": 9174,
+      "last_character_index": 10254
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/system_messages/sonnet3.5_nov2024.txt",
+      "first_character_index": 1836,
+      "last_character_index": 3005
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/README.md",
+      "first_character_index": 10576,
+      "last_character_index": 11235
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/community/meetups.md",
+      "first_character_index": 3314,
+      "last_character_index": 3773
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/system_messages/sonnet3.5_nov2024.txt",
+      "first_character_index": 3005,
+      "last_character_index": 4204
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/multiprocessing.md",
+      "first_character_index": 6569,
+      "last_character_index": 7215
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 42784,
+      "last_character_index": 43917
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/vision_language.py",
+      "first_character_index": 19429,
+      "last_character_index": 20158
+    }
+  ],
+  "answer": "The context provided does not contain the answer to the question."
+}

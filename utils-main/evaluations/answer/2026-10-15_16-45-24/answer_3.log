@@ -1,0 +1,57 @@
+{
+  "question_id": "2d41e8a2-f74b-4350-827d-337e4ab80bdf",
+  "question": "What is the minimum CUDA compiler version required to build NVFP4 quantization kernels in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 21858,
+      "last_character_index": 23858
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/incremental_build.md",
+      "first_character_index": 3030,
+      "last_character_index": 5030
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/modelopt.py",
+      "first_character_index": 28167,
+      "last_character_index": 30167
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/quantization/test_nvfp4_scaled_mm.py",
+      "first_character_index": 0,
+      "last_character_index": 738
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tools/generate_cmake_presets.py",
+      "first_character_index": 2772,
+      "last_character_index": 4772
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/quantization/test_flashinfer_nvfp4_scaled_mm.py",
+      "first_character_index": 0,
+      "last_character_index": 832
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/nvfp4_moe_support.py",
+      "first_character_index": 804,
+      "last_character_index": 1990
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/bench_nvfp4_gemm.py",
+      "first_character_index": 0,
+      "last_character_index": 842
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 19858,
+      "last_character_index": 21858
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 17858,
+      "last_character_index": 19858
+    }
+  ],
+  "answer": "The minimum CUDA compiler version required to build NVFP4 quantization kernels in vLLM is 12.8."
+}
